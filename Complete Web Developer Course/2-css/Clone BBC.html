@@ -3,54 +3,67 @@
     <head>
         
         <title>Technology - BBC News</title>
+        
         <style>
             
             body{
                 
                 padding:0px;
                 margin:0px;
-                     
+                
+                
             }
             
             .wrapper{
+                width:1200px;
+                margin:auto;
+
                 
-                margin-left:105px;
-                margin-right:105px;
-                padding:0px;
-                
-     
             }
             
-
-            
+            #head1{
+                height:43px;
+               
+                 
+            }
+        
             #head1 p{
                 
                 height:43px;
                 margin-top:0px;
                 border-right:thick double #ff0000;
                 float:left;
-           
+                margin-bottom:0px;
+                
             }
             
             #p-logo{
                 
                 width:95px; 
-            
             }
             
-            img{
+            #bbc-logo{
                  height: 25px;
-                 
+                 padding-left:0px;
+            }
+            
+            #login {
+                 height: 25px;
+                 padding-left:15px;
+                 padding-right:15px;
+  
+            }
+            #imgbell {
+                height:25px;
+                padding-left:20px;
+                padding-right:20px;
+
             }
             
             #Sign-in{
-                
-                
-            
+                padding-right:100px;
             
             }
-            
-            
             
             #head1 li{
                 
@@ -58,96 +71,108 @@
                 list-style-type: none;
                 border-right:thick double #ff0000;
                 height:43px;
+                padding-left:22px;
+                padding-right:22px;
+                
               
             }
             
             #search {
                 
-                float:left;
+                float:right;
+                margin-left:10px;
+                
             }
             
-            #loupe{
+            #head2{
+                height:56px;
+                background-color:#BB1919;  
+            }
+            
+            #head2 p{
                 
                 float:left;
-                height:25px;
-            
+                color:white;
             }
             
-    
+            #head3{
+                height:36px;
+                background-color:#A91717;
+                
+            }
             
-            
-            
-
+     
         </style>
     
     </head>
     
     <body>
         
-        <section id="head1">
+        <div id="head1">
             
             <div class="wrapper">
                 
                 <p id="p-logo"><img id="bbc-logo" src="logo-bbc.jpg"></p>
                 
-                <p id="Sign-in"><img src="login.png">Sign in</p>
+                <p id="Sign-in"><img id="login" src="login.png">Sign in</p>
                 
-                <p id="bell"><img src="bell.png"></p>
+                <p id="bell"><img id="imgbell" src="bell.png"></p>
+                
+              
+                    <ul>
+
+                        <li>News</li>
+                        <li>Sport</li>
+                        <li>Weather</li>
+                        <li>iPlayer</li>
+                        <li>Tv</li>
+                        <li>Radio</li>
+                        <li>More</li>
+
+                    </ul>
+                
+
+                
+                <input id="search" type="text" placeholder="Seach">
+
+            </div>
+            
+        </div>
         
+    
+        <div id="head2">
+            
+            <div class="wrapper">
+                
+                <p id="h2_news">News</p>
+                 
+            </div>
+            
+        </div>
+        
+        
+        
+        <div id="head3">
+            
+            <div class="wrapper">
                 
                 <ul>
-                    
-                    <li>News</li>
-                    <li>Sport</li>
-                    <li>Weather</li>
-                    <li>iPlayer</li>
-                    <li>Tv</li>
+
+                    <li>Home</li>
+                    <li>Videort</li>
+                    <li>World</li>
+                    <li>US Canada</li>
+                    <li></li>
                     <li>Radio</li>
                     <li>More</li>
-                
+
                 </ul>
                 
                 
-                <input id="search" type="text" placeholder="Seach">
-                
-                <img id="loupe" src="search%20icon.png">
-                
-                
-                
-            
+               
             </div>
             
-        </section>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <section id="head2">
-            
-            <div class="wrapper">
-            
-            </div>
-            
-        </section>
-        
-        
-        
-        <section id="head3">
-            
-            <div class="wrapper">
-            
-            </div>
-            
-        </section>
+        </div>
         
         
         
