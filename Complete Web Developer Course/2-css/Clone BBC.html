@@ -2,7 +2,8 @@
     
     <head>
         
-        <title>Technology - BBC News</title>
+        <title>Home - BBC News</title>
+        <link rel="icon" type="image/gif/png" href="logo-bbc.jpg">
         
         <style>
             
@@ -16,7 +17,7 @@
             
             .wrapper{
                 width:1200px;
-                margin:auto;
+                margin:0px auto;
 
                 
             }
@@ -73,6 +74,8 @@
                 height:43px;
                 padding-left:22px;
                 padding-right:22px;
+                display: inline;
+                
                 
               
             }
@@ -98,9 +101,61 @@
             #head3{
                 height:36px;
                 background-color:#A91717;
+            }
+            
+            #menu3{
+                
+                float:left;
+                list-style-type: none; 
+                padding:0px;
+                height:20px;
+                margin:8px 0px;
                 
             }
             
+            #menu3 li{
+                
+                display: inline; 
+                color:white;
+                border-right: thick double white;
+            }
+            
+            #more_3{
+                
+                float:left;
+                margin:8px 0px;
+                color:white;
+            }
+            
+            #content{
+                
+                width:800px;
+            
+            }
+            
+            #venezuela_money{
+                
+                float:right;
+                height:300px;
+                
+            
+            }
+            
+            
+            #list_news{
+                
+                padding:0px;
+                
+            }
+            
+            
+            #list_news li{
+                
+                display:inline;
+                
+            }
+            
+ 
      
         </style>
     
@@ -156,22 +211,54 @@
             
             <div class="wrapper">
                 
-                <ul>
+                <ul id="menu3">
 
                     <li>Home</li>
-                    <li>Videort</li>
+                    <li>Video</li>
                     <li>World</li>
-                    <li>US Canada</li>
-                    <li></li>
-                    <li>Radio</li>
-                    <li>More</li>
+                    <li>US &amp; Canada</li>
+                    <li>UK</li>
+                    <li>Business</li>
+                    <li>Tech</li>
+                    <li>Science</li>
+                    <li>Magazine</li>
+                    <li>Entertainment &amp; Arts</li>
+                    <li>Health</li>
+                    
 
                 </ul>
                 
+                <p id="more_3">More</p>
                 
-               
             </div>
             
+        </div>
+        
+        <div class="wrapper">
+            <div id="content">
+                <p id="content_title">Venezuela delays banknote withdrawal</p>
+
+                <img id="venezuela_money" src="venezuela-money.jpg">
+
+                <div id="content_news">
+
+                    <p id="content_test">Venezuela's president delays the scrapping of the 100-bolivar banknote until January, amid protest </p>
+
+                    <p id="content_time">1 hours</p>
+                    
+                    <ul id="list_news">
+
+                        <li>Latin America &amp; Caribbean</li>
+                        <li>Venezuelans mock 'useless' banknote</li>
+                        <li>Venezuela pulls banknote 'to hit mafia'</li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+        
         </div>
         
         
