@@ -1,0 +1,55 @@
+<html>
+    
+    <head>
+        
+        <title>Reaction Timer</title>
+        
+        <style>
+            
+            #content{
+                
+                background-color:red;
+                height:100px;
+                width:100px;
+                margin:0px;
+                padding:0px;
+            }
+
+        </style>
+    
+    </head>
+    
+    <body>
+        
+        <p id="time_reaction">Your time is : <span> </span></p>
+        
+        <div id="content">
+             
+        
+        </div>
+        
+        <script type="text/javascript">
+            
+            var t1;
+            var t2;
+            var time;
+            
+            
+            function reappear(){
+                
+                document.getElementById("content").style.display="block";
+            
+            }
+            
+            document.getElementById("content").onclick=function(){
+                
+                time=3000;
+                document.getElementById("content").style.display="none"; 
+                window.setTimeout(reappear,time);
+            
+            }
+        
+        </script>
+    </body>
+
+</html>

@@ -7,47 +7,53 @@
     </head>
     
     <body>
+
+        <p> How many fingers are you holding up ?</p>
+
+        <p>
+            <select id="myNumber">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
         
-        <p id="text">Hello world!</p>
-        <button id="myButton">Change text</button>
         
-        <p id="secondParagraph">Javascript is ...</p>
-        <button id="myButton2">Append text</button>
+            <button id="myButton">Computer Guess</button>
+        </p>
         
-        
-        <button id="myButton3">Appear text</button>
-        <p id="thirdParagraph"></p>
-        
-        
-        
-    
         <script type="text/javascript">
             
+            function doAGuess(correctAnswer){
+                
+                var i=0
+                var randomNumber=6;
+                
+                while(randomNumber!=correctAnswer){
+                    
+                    randomNumber=Math.floor(Math.random()*6);
+                    i++;
+                }
+                
+                    alert("It tooked "+i+" trials");
+
+                }
+                
+                
+
             document.getElementById("myButton").onclick=function(){
+                var rightNumber=document.getElementById("myNumber").value
+                doAGuess(rightNumber);
                 
-                alert("Button is click");
-                
-                document.getElementById("text").innerHTML="yo I change the text";
-            
-            }
-            
-            document.getElementById("myButton2").onclick=function(){
-                
-                document.getElementById("secondParagraph").innerHTML="I think "+document.getElementById("secondParagraph").innerHTML+"awesone";
-            
-            }
-            
-            document.getElementById("myButton3").onclick=function(){
-                
-                document.getElementById("thirdParagraph").innerHTML=document.getElementById("thirdParagraph").innerHTML+"element added ";
-            
-            }
-            
-            
-        
+                }
+
+    
+
         </script>
     
     
     </body>
-
+
 </html>
