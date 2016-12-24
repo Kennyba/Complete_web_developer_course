@@ -21,7 +21,7 @@
     
     <body>
         
-        <p id="time_reaction">Your time is : <span> </span></p>
+        <p id="time_reaction">Your time is : <span id="time"> </span></p>
         
         <div id="content">
              
@@ -30,19 +30,24 @@
         
         <script type="text/javascript">
             
-            var t1;
-            var t2;
+            var t1= new Date;
+            var t2= new Date;
             var time;
+            var reacttime;
             
-            
+            t1=Date.now();
             function reappear(){
                 
                 document.getElementById("content").style.display="block";
+                t1=Date.now();
             
             }
             
             document.getElementById("content").onclick=function(){
                 
+                t2=Date.now();
+                reacttime=t2-t1;
+                document.getElementById("time").innerHTML=(reacttime/1000)+" seconds";
                 time=3000;
                 document.getElementById("content").style.display="none"; 
                 window.setTimeout(reappear,time);
