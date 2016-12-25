@@ -4,15 +4,24 @@
         
         <title>Reaction Timer</title>
         
-        <style>
+        <style id="format">
             
             #content{
-                
+                position:relative;
                 background-color:red;
                 height:100px;
                 width:100px;
                 margin:0px;
                 padding:0px;
+                top:30%;
+                left:30%;
+                
+            }
+            
+            #time_reaction{
+                
+                font-weight:bold;
+            
             }
 
         </style>
@@ -21,6 +30,10 @@
     
     <body>
         
+        
+        <h1>Test your Reactions!</h1>
+        
+        <p>Click on the boxes and circles as quickly as you can !</p>
         <p id="time_reaction">Your time is : <span id="time"> </span></p>
         
         <div id="content">
@@ -35,9 +48,45 @@
             var time;
             var reacttime;
             
+            var randomTop;
+            var randomLeft;
+            
+            var shape=[];
+            var shapeindex;
+            
+            var backcolor=[];
+            var bcindex;
+            
+            var randsize;
+            
+
+            
+            shape=["square","circle"];
+            backcolor=["blue","red","yellow","pink","purple"];
+                
             t1=Date.now();
             function reappear(){
                 
+                shapeindex=Math.floor(Math.random()*2);
+                
+                if (shape[shapeindex]=="circle") {
+                
+                    document.getElementById("content").style.borderRadius="50%";
+                
+                } else {
+                
+                    document.getElementById("content").style.borderRadius="0%";
+                };
+
+                randsize=Math.max(50,Math.floor(Math.random()*250));
+                bcindex=Math.floor(Math.random()*5);
+                randomTop=Math.floor(Math.random()*85);
+                randomLeft=Math.floor(Math.random()*85);
+                document.getElementById("content").style.height=randsize+"px";
+                document.getElementById("content").style.width=randsize+"px";
+                document.getElementById("content").style.backgroundColor=backcolor[bcindex];
+                document.getElementById("content").style.top=randomTop+"%";
+                document.getElementById("content").style.left=randomLeft+"%";
                 document.getElementById("content").style.display="block";
                 t1=Date.now();
             
@@ -48,7 +97,7 @@
                 t2=Date.now();
                 reacttime=t2-t1;
                 document.getElementById("time").innerHTML=(reacttime/1000)+" seconds";
-                time=3000;
+                time=Math.floor(Math.random()*5000);
                 document.getElementById("content").style.display="none"; 
                 window.setTimeout(reappear,time);
             
