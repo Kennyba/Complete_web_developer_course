@@ -4,68 +4,11 @@
         
         <title>jQuery</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        
         
         <style type="text/css">
-            
-            body{
-                
-                font-family: helvatica, sans-serif;
-                font-size:130%;
-
-            }
-            
-            input{
-                
-                padding: 5px 5px 12px 5px;
-                font-size:25px;
-                border-radius: 5px;
-                border: 1px solid grey;
-                width:310px;
-            
-            }
-            
-            label {
-                
-                position: relative;
-                top:12px;
-                width:200px;
-                float:left;
-
-            }
-            
-            #wrapper {
-                
-                width:520px;
-                margin: 0 auto;
-
-            }
-            
-            .form-element{
-                
-                margin-bottom:10px;
-            }
-            
-            #submitButton{
-                
-                width:130px;
-                margin-left: 200px;
-            
-            }
-            
-            #errorMessage{
-                
-                color:red;
-                font-size:90% !important;
-            
-            }
-            
-            #successMessage{
-                
-                color:green;
-                font-size:90% !important;
-                display:none;
-            
-            }
 
         </style>
 
@@ -73,135 +16,19 @@
     
     <body>
         
-        <div id="wrapper">
-            
-            <div id="successMessage">Log in !!!</div>
-            
-            <div id="errorMessage"></div>
-            
-            <div class="form-element">
-            
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="eg. yourname@gmail.com">
-            
-            </div>
-             
-            <div class="form-element">
-                
-                <label for="phone">Telephone</label>
-                <input type="text" name="phone" id="phone" placeholder="eg. 0123456789">
-                
-            </div>
-            
-            
-            <div class="form-element">
-                
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                
-            </div>
-            
-            <div class="form-element">
-                
-                <label for="passwordconfirm">Confirm Password</label>
-                <input type="password" name="passwordconfirm" id="passwordconfirm">
-                
-            </div>
-            
-            <div class="form-element">
-                
-                <input type="submit" id="submitButton" value="Sign up">
-                
-            </div>
-            
-        </div>
-
+        <ul id="sortable">
+            <li><p>Yo</p></li>
+            <li><p>je</p></li>
+            <li><p>suis</p></li>
+            <li><p>kenny</p></li>
+        </ul>
+        
         
         <script type="text/javascript">
             
-                function isEmail(email) {
-                    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                    return regex.test(email);
-                }
+            $("#sortable").sortable();
+
             
-                $("#submitButton").click(function(){
-                
-                    var errorMessage = "";
-                    var fieldMissing = "";
-                    
-                    if($("#email").val()==""){
-                        
-                        fieldMissing+="<br>Email";
-
-                    }
-                    
-                    if($("#phone").val()==""){
-                        
-                        fieldMissing+="<br>Telephone";
-
-                    }
-                    
-                    if($("#password").val()==""){
-                        
-                        fieldMissing+="<br>Password";
-
-                    }
-                    
-                    if($("#passwordconfirm").val()==""){
-                        
-                        fieldMissing+="<br>Confirm Password";
-
-                    }
-                    
-                    if (fieldMissing != "") {
-                        
-                        errorMessage += "<p>The following field(s) are missing:"+fieldMissing+"</p>";
-                    
-                    
-                    }
-
-                    if(isEmail($("#email").val())==false){
-
-                        errorMessage+= "<p>Your email address is not valid</p>";
-
-                    }
-                    
-                    
-
-                   if($.isNumeric($("#phone").val())==false) {
-
-                       errorMessage+="<p>Your phone number is not numeric</p>";
-
-
-                   }
-
-                   if($("#password").val() != $("#passwordconfirm").val()) {
-                       
-                       errorMessage+="<p>Your password doesn't match</p>";
-
-                   }
-                    
-                   if (errorMessage != "") {
-                       
-                       $("#errorMessage").html(errorMessage);
-                   
-                   } else {
-                       
-                       $("#errorMessage").hide();
-                       $("#successMessage").show();
-
-                   }
-                    
-                
-                    
-                 
-                    
-
-               });
-            
-            
-            
-
         </script>
 
     </body>
