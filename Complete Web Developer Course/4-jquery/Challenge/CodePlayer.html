@@ -2,6 +2,11 @@
     
     <head>
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+        
         <title>CodePlayer</title>
         
         <style type="text/css">
@@ -24,6 +29,18 @@
                 padding:10px; 
                 float:left;
                 font-size: 1.5em;
+                position:absolute;
+                
+            }
+            
+            #menu{
+                
+                overflow:hidden;
+                width:260px;
+                height:22px;
+                margin:0px auto;
+                padding-top:10px;
+                
             
             }
             
@@ -37,6 +54,7 @@
                 border:1px solid black;
                 overflow: hidden;
                 height:19px;
+                
                 
             }
             
@@ -58,11 +76,32 @@
             
             }
             
+            #code{
+                
+                overflow: hidden;
+                width:100%;
+                
             
+            }
             
+            .content{
+                
+                float:left;
+                width:22%;
+                height:100%;
+                border:1px solid black;
+                
+            }
+            
+            .inner{
+                
+                width:100%;
+                height:100%;
+                resize:none;
+            
+            }
             
 
- 
 
         </style>
     
@@ -72,19 +111,70 @@
     
         <div id="head">
             <span id="site-name">CodePlayer</span>
-
+            
+            
+            <div id="menu">
                 <ul>
                     <li><a id="HTML">HTML</a></li>
                     <li><a id="Css">Css</a></li>
                     <li><a id="Javascript">Javascript</a></li>
                     <li><a id="Output">Output</a></li>
                 </ul>
-
+            </div>
+            
+            
         </div>
         
+        <div id="code_html" class="content">
+            <textarea id="inner_html" class="inner"></textarea>
+        </div>
+
+        <div id="code_css" class="content">
+            <textarea id="inner_css" class="inner"></textarea>
+        </div>
+
+        <div id="code_javascript" class="content">
+            <textarea id="inner_javascript" class="inner"></textarea>
+        </div>
+
+        <div id="code_output" class="content">
+            
+        </div>
+
         
         <script type="text/javascript">
-        
+            
+            $("#HTML").click(function(){
+                
+                $("#code_html").toggle();
+            
+            });
+            
+            $("#Css").click(function(){
+                
+                $("#code_css").toggle();
+            
+            });
+            
+            $("#Javascript").click(function(){
+                
+                $("#code_javascript").toggle();
+            
+            });
+            
+            $("#Output").click(function(){
+                
+                $("#code_output").toggle();
+            
+            });
+            
+            
+            
+            
+            
+            
+            
+            
         </script>
     
     </body>
