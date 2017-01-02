@@ -44,7 +44,7 @@
             
             }
             
-            ul{
+            #menu ul{
                 float:left;
                 margin:0px;
                 padding:0px;
@@ -58,19 +58,19 @@
                 
             }
             
-            li{
+            #menu li{
                 float: left;
                 padding 4px;
             }
             
-            li a{
+            #menu li a{
                 
                 text-align:center;
                 padding:10px;
 
             }
             
-            li a:hover{
+            #menu li a:hover{
                 
                 background-color:aqua;
             
@@ -126,6 +126,7 @@
         </div>
         
         <div id="code_html" class="content">
+            <!--<button>allo</button>-->
             <textarea id="inner_html" class="inner"></textarea>
         </div>
 
@@ -144,36 +145,76 @@
         
         <script type="text/javascript">
             
-            $("#HTML").click(function(){
+            $(document).ready(function(){
                 
-                $("#code_html").toggle();
+                //(BEGINNING):Code that tab in the text area http://stackoverflow.com/questions/6140632/how-to-handle-tab-in-textarea
+                
+                $("#inner_html, #inner_css, #inner_javascript").keydown(function(e) {
+                    if(e.keyCode === 9) { // tab was pressed
+                        // get caret position/selection
+                        var start = this.selectionStart;
+                        var end = this.selectionEnd;
+
+                        var $this = $(this);
+                        var value = $this.val();
+
+                        // set textarea value to: text before caret + tab + text after caret
+                        $this.val(value.substring(0, start)
+                                    + "\t"
+                                    + value.substring(end));
+
+                        // put caret at right position again (add one for the tab)
+                        this.selectionStart = this.selectionEnd = start + 1;
+
+                        // prevent the focus lose
+                        e.preventDefault();
+                    }
+                });
+                
+                //(END):Code that allows to do tab in the text area
+                
+                
+            
+
+                $("#HTML").click(function(){
+
+                    $("#code_html").toggle();
+
+                });
+
+                $("#Css").click(function(){
+
+                    $("#code_css").toggle();
+
+                });
+
+                $("#Javascript").click(function(){
+
+                    $("#code_javascript").toggle();
+
+                });
+
+                $("#Output").click(function(){
+
+                    $("#code_output").toggle();
+
+                });
+                
+                
+                
+                $("#inner_html").keyup(function(){
+
+                    $("#code_output").html($("#inner_html").val());
+                
+                });
+
+
+
+                
             
             });
             
-            $("#Css").click(function(){
-                
-                $("#code_css").toggle();
-            
-            });
-            
-            $("#Javascript").click(function(){
-                
-                $("#code_javascript").toggle();
-            
-            });
-            
-            $("#Output").click(function(){
-                
-                $("#code_output").toggle();
-            
-            });
-            
-            
-            
-            
-            
-            
-            
+
             
         </script>
     
