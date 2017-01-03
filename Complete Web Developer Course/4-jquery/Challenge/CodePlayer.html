@@ -208,17 +208,23 @@
                 
                 $("#inner_html").keyup(function(){
                     
-                    $.get("web_content.html",function(data){
-                        
-                        alert(data);
-                        
-                    });
+                    $("#code_output").contents().find("body").html($("#inner_html").val());
+                    
+                    
 
                 
                 });
                 
                 $("#inner_css").keyup(function(){
                     
+                    $("#code_output").contents().find("style").html($("#inner_css").val());
+                   
+                
+                });
+                
+                $("#inner_javascript").keyup(function(){
+                    
+                    $("#code_output").contents().find("script").html($("#inner_javascript").val());
                    
                 
                 });
