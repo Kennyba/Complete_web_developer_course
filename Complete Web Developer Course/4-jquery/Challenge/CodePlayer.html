@@ -101,6 +101,10 @@
             
             }
             
+            
+            
+            
+    
 
 
         </style>
@@ -138,9 +142,9 @@
             <textarea id="inner_javascript" class="inner"></textarea>
         </div>
 
-        <div id="code_output" class="content">
+        <iframe src="web_content.html" id="code_output" class="content">
             
-        </div>
+        </iframe>
 
         
         <script type="text/javascript">
@@ -203,8 +207,19 @@
                 
                 
                 $("#inner_html").keyup(function(){
+                    
+                    $.get("web_content.html",function(data){
+                        
+                        alert(data);
+                        
+                    });
 
-                    $("#code_output").html($("#inner_html").val());
+                
+                });
+                
+                $("#inner_css").keyup(function(){
+                    
+                   
                 
                 });
 
